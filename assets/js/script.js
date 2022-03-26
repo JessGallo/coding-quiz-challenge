@@ -26,6 +26,30 @@ function startQuiz() {
     document.body.appendChild(title);
     document.body.appendChild(intro);
     document.body.appendChild(startBtn);
+
+    startBtn.addEventListener('click', questionOne);
+
+        function questionOne() {
+            title.textContent = "Commonly used data types DO NOT include:";
+            document.body.removeChild(intro);
+            document.body.removeChild(startBtn);
+
+            var optionOne = document.createElement("button");
+            optionOne.innerHTML = "1.strings";
+            var optionTwo = document.createElement("button");
+            optionTwo.innerHTML = "2.booleans";
+            var optionThree = document.createElement("button");
+            optionThree.innerHTML = "3.alerts";
+            var optionFour = document.createElement("button");
+            optionFour.innerHTML = "4.numbers";
+
+            document.body.appendChild(optionOne);
+            document.body.appendChild(optionTwo);
+            document.body.appendChild(optionThree);
+            document.body.appendChild(optionFour);
+
+        }
+
 }
 
 
