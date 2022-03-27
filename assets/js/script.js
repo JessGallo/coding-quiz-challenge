@@ -26,6 +26,17 @@ function timer() {
 
 timer();
 
+function correct() {
+    var correct = document.createElement ('h3');
+    correct.textContent = "Correct!";
+    document.body.appendChild(correct);
+}
+
+function wrong() {
+    var wrong = document.createElement ('h3');
+    wrong.textContent = "Wrong!";
+    document.body.appendChild(wrong);
+}
 
 function introduction() {
     title.textContent = "Coding Quiz Challenge";
@@ -52,9 +63,13 @@ function introduction() {
             document.body.appendChild(optionFour);
             
             optionOne.addEventListener('click', questionTwo);
+            optionOne.addEventListener('click', wrong);
             optionTwo.addEventListener('click', questionTwo);
+            optionTwo.addEventListener('click', wrong);
             optionFour.addEventListener('click', questionTwo);
+            optionFour.addEventListener('click', wrong);
             optionThree.addEventListener('click', questionTwo);
+            optionThree.addEventListener('click', correct);
                 function questionTwo() {
                     question.innerHTML = "The condition in an if/else statement is encolsed with ______.";
                     optionOne.innerHTML = "1.quotes";
@@ -94,6 +109,29 @@ function introduction() {
                                     optionTwo.innerHTML = "2.terminal/bash";
                                     optionThree.innerHTML = "3.for loops";
                                     optionFour.innerHTML = "4.console.log";
+
+                                    optionOne.addEventListener('click', allDone);
+                                    optionTwo.addEventListener('click', allDone);
+                                    optionThree.addEventListener('click', allDone);
+                                    optionFour.addEventListener('click', allDone);
+                                    function allDone() {
+                                        document.body.removeChild(optionOne);
+                                        document.body.removeChild(optionTwo);
+                                        document.body.removeChild(optionThree);
+                                        document.body.removeChild(optionFour);
+
+                                        question.innerHTML = "All done!";
+
+                                        var endScreen = document.createElement("div");
+                                        endScreen.innerHTML = "Your final score is 22.";
+                                        document.body.appendChild(endScreen);
+
+                                        var enterInitials = document.createElement("form");
+                                        enterInitials.innerHTML = "Enter initials:";
+                                        document.body.appendChild(enterInitials);
+
+                                    }
+
                                 }
 
                             }
