@@ -141,9 +141,15 @@ function introduction() {
                                         endScreen.innerHTML = "Your final score is " + points + ".";
                                         document.body.appendChild(endScreen);
 
-                                        var enterInitials = document.createElement("form");
+                                        var enterInitials = document.createElement("button");
                                         enterInitials.innerHTML = "Enter initials:";
+
                                         document.body.appendChild(enterInitials);
+
+                                        enterInitials.addEventListener('click', initialsForm);
+                                            function initialsForm(){
+                                                window.prompt("Enter initials:");
+                                            }
 
                                     }
 
